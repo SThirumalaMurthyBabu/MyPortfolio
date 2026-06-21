@@ -1,6 +1,6 @@
-# Abina Abey - Portfolio Website
+# STMB - Portfolio Website
 
-A highly professional, feature-rich portfolio website for Robotics & Automation Engineering student.
+A highly professional, feature-rich portfolio website for Aspiring Robotics Engineer.
 
 ## 🚀 Features
 
@@ -28,8 +28,8 @@ portfolio/
 ├── index.html      # Main HTML file
 ├── style.css       # All styles (responsive, dark/light mode)
 ├── script.js       # All JavaScript (interactivity, animations)
-├── abina.jpeg      # Your profile photo (ADD THIS!)
-└── Abina_CV.pdf    # Your resume (ADD THIS!)
+├── Murthy.jpeg      # Your profile photo (ADD THIS!)
+└── Murthy_Resume    # Your resume (ADD THIS!)
 ```
 
 ## 🛠️ Setup Instructions
