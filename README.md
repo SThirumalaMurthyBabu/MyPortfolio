@@ -122,4 +122,4 @@ For any issues or updates, modify the files directly and push to GitHub.
 
 ---
 
-**Built with ❤️ and 🤖 by Abina Abey**
+**Built with ❤️ and 🤖 by STMB**
