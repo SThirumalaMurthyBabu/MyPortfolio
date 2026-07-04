@@ -927,8 +927,17 @@ section {
     align-items: center;
     justify-content: center;
     gap: 1rem;
+
     opacity: 0;
     transition: opacity 0.3s;
+
+    z-index: 100;
+    pointer-events: none;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .project-card:hover .project-overlay {
@@ -948,6 +957,9 @@ section {
     transition: var(--transition);
     border: none;
     cursor: pointer;
+
+    position: relative;
+    z-index: 101;
 }
 
 .project-btn:hover {
@@ -1098,7 +1110,6 @@ section {
     font-weight: 600;
     color: var(--text-muted);
 }
-
 /* Achievements Section */
 /* ============================= */
 
