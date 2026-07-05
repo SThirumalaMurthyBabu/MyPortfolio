@@ -322,81 +322,83 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const projectDetails = {
         1: {
-            title: 'Gesture-Controlled TurtleBot3',
-            tags: ['ROS 2', 'OpenCV', 'MediaPipe', 'Python', 'Computer Vision'],
-            description: 'A sophisticated hand-gesture recognition system that bridges human-computer interaction with robotics. Built using OpenCV and MediaPipe for real-time hand landmark detection, mapped to ROS 2 velocity commands to control TurtleBot3 navigation.',
+            title: 'Autonomous Turtlebot Navigation',
+            tags: ['ROS 2', 'Turtlesim', 'Python', 'Linux'],
+            description: 'Add description of the project here.',
             features: [
-                'Real-time hand gesture recognition using MediaPipe Hands',
-                'ROS 2 publisher nodes for velocity command mapping',
-                'Custom gesture definitions for forward, backward, left, right, stop',
-                'OpenCV video stream integration with ROS 2 image transport',
-                'TurtleBot3 simulation testing in Gazebo before hardware deployment'
-            ]
+                'Feature 1',
+                'Feature 2',
+                'Feature 3',
+                'Feature 4',
+                'Feature 5'
+            ],
+            github: "https://github.com/SThirumalaMurthyBabu/ros2-turtlesim-project"
         },
         2: {
-            title: 'Real-Time Face Detection & Tracking',
-            tags: ['ROS 2', 'OpenCV', 'Serial Communication', 'Embedded', 'Python'],
-            description: 'An intelligent vision system that integrates OpenCV face detection algorithms with ROS 2 framework. Enables real-time face tracking with hardware actuation via serial communication for pan-tilt servo control.',
+            title: 'Speed-Torque Mode Switching',
+            tags: ['CAN', 'BusMaster', 'VCU', 'Embedded C'],
+            description: 'Add description of the project here.',
             features: [
-                'Haar Cascade / DNN-based face detection in ROS 2 nodes',
-                'Real-time bounding box tracking and centroid calculation',
-                'Serial communication protocol for Arduino servo control',
-                'Pan-tilt mechanism for active face following',
-                'ROS 2 topic-based architecture for modular design'
-            ]
+                'Feature 1',
+                'Feature 2',
+                'Feature 3',
+                'Feature 4',
+                'Feature 5'
+            ],
+            github: "https://github.com/SThirumalaMurthyBabu/Speed-Torque-Mode-Switching"
         },
         3: {
-            title: 'Autonomous Plant Watering Robot',
-            tags: ['Arduino', 'Soil Sensors', 'IoT', 'Embedded C', 'Automation'],
-            description: 'A fully autonomous mobile robot designed for agricultural automation. Features soil moisture sensing, automatic irrigation pump control, and real-time monitoring capabilities for smart farming applications.',
+            title: 'Drive-by-Wire System',
+            tags: ['CAN', 'BusMaster', 'DBC Files'],
+            description: 'Add description of the project here.',
             features: [
-                'Soil moisture sensor integration with threshold-based logic',
-                'Automatic water pump activation via relay module',
-                'Mobile robot chassis with obstacle avoidance',
-                'Real-time LCD monitoring of soil status',
-                'Power-efficient design for extended field operation',
-                'Presented at SRISHTI 2026 National Technical Exhibition'
-            ]
+                'Feature 1',
+                'Feature 2',
+                'Feature 3',
+                'Feature 4',
+                'Feature 5'
+            ],
+            github: "https://github.com/SThirumalaMurthyBabu/Drive-by-Wire.git"
         },
-        4: {
-            title: '6-DOF Robotic Arm with GUI',
-            tags: ['Arduino', 'Servo Motors', 'GUI', 'Kinematics', 'C++'],
-            description: 'A precision 6-Degree-of-Freedom robotic arm controlled through an intuitive graphical user interface. Enables real-time manipulation of each joint with forward kinematics visualization and position control.',
-            features: [
-                '6 servo motor control with individual joint manipulation',
-                'Custom GUI built with Processing / Python Tkinter',
-                'Serial communication between PC and Arduino',
-                'Real-time position feedback and angle display',
-                'Pre-programmed motion sequences and pick-place operations',
-                'Demonstrated at EXORDIUM 4.0 college technical fest'
-            ]
-        },
-        5: {
-            title: 'ROS 2 Trajectory & Path Planning',
-            tags: ['ROS 2', 'Turtlesim', 'Path Planning', 'Python', 'Mathematics'],
-            description: 'Advanced trajectory generation and path planning algorithms implemented as custom ROS 2 nodes. Features shape drawing capabilities, dynamic target tracking, and smooth curve interpolation for mobile robot navigation.',
-            features: [
-                'Custom ROS 2 nodes for trajectory generation',
-                'Parametric shape drawing (circles, squares, spirals)',
-                'Dynamic target tracking with proportional control',
-                'Bézier curve and spline-based smooth path planning',
-                'Turtlesim simulation environment for algorithm validation',
-                'Modular architecture for easy deployment to physical robots'
-            ]
-        },
-        6: {
-            title: 'Hardware Automation: Chrome Dino Game',
-            tags: ['Arduino', 'LDR Sensor', 'Servo Motor', 'Automation', 'C++'],
-            description: 'A creative hardware automation project that plays the Chrome Dinosaur game automatically. Uses Light Dependent Resistor (LDR) to detect oncoming obstacles and servo motor to physically press the spacebar.',
-            features: [
-                'LDR-based obstacle detection with calibrated thresholds',
-                'Servo motor mechanism for physical keypress automation',
-                'Real-time response with minimal latency',
-                'Adjustable sensitivity for different screen brightness',
-                'Compact Arduino Nano implementation',
-                'Demonstrates sensor-actuator closed-loop control principles'
-            ]
-        }
+        // 4: {
+        //     title: '6-DOF Robotic Arm with GUI',
+        //     tags: ['Arduino', 'Servo Motors', 'GUI', 'Kinematics', 'C++'],
+        //     description: 'A precision 6-Degree-of-Freedom robotic arm controlled through an intuitive graphical user interface. Enables real-time manipulation of each joint with forward kinematics visualization and position control.',
+        //     features: [
+        //         '6 servo motor control with individual joint manipulation',
+        //         'Custom GUI built with Processing / Python Tkinter',
+        //         'Serial communication between PC and Arduino',
+        //         'Real-time position feedback and angle display',
+        //         'Pre-programmed motion sequences and pick-place operations',
+        //         'Demonstrated at EXORDIUM 4.0 college technical fest'
+        //     ]
+        // },
+        // 5: {
+        //     title: 'ROS 2 Trajectory & Path Planning',
+        //     tags: ['ROS 2', 'Turtlesim', 'Path Planning', 'Python', 'Mathematics'],
+        //     description: 'Advanced trajectory generation and path planning algorithms implemented as custom ROS 2 nodes. Features shape drawing capabilities, dynamic target tracking, and smooth curve interpolation for mobile robot navigation.',
+        //     features: [
+        //         'Custom ROS 2 nodes for trajectory generation',
+        //         'Parametric shape drawing (circles, squares, spirals)',
+        //         'Dynamic target tracking with proportional control',
+        //         'Bézier curve and spline-based smooth path planning',
+        //         'Turtlesim simulation environment for algorithm validation',
+        //         'Modular architecture for easy deployment to physical robots'
+        //     ]
+        // },
+        // 6: {
+        //     title: 'Hardware Automation: Chrome Dino Game',
+        //     tags: ['Arduino', 'LDR Sensor', 'Servo Motor', 'Automation', 'C++'],
+        //     description: 'A creative hardware automation project that plays the Chrome Dinosaur game automatically. Uses Light Dependent Resistor (LDR) to detect oncoming obstacles and servo motor to physically press the spacebar.',
+        //     features: [
+        //         'LDR-based obstacle detection with calibrated thresholds',
+        //         'Servo motor mechanism for physical keypress automation',
+        //         'Real-time response with minimal latency',
+        //         'Adjustable sensitivity for different screen brightness',
+        //         'Compact Arduino Nano implementation',
+        //         'Demonstrates sensor-actuator closed-loop control principles'
+        //     ]
+        // }
     };
 
     document.querySelectorAll('.view-details').forEach(btn => {
@@ -407,16 +409,21 @@ document.addEventListener('DOMContentLoaded', () => {
             if (project) {
                 modalBody.innerHTML = `
                     <h2>${project.title}</h2>
+
                     <div class="modal-tags">
-                        ${project.tags.map(tag => `<span>${tag}</span>`).join('')}
+                    ${project.tags.map(tag => `<span>${tag}</span>`).join('')}
                     </div>
+
                     <p>${project.description}</p>
-                    <h4 style="margin-bottom: 1rem; color: var(--text);">Key Features</h4>
+
+                    <h4 style="margin-bottom:1rem;color:var(--text);">Key Features</h4>
+
                     <ul class="modal-features">
-                        ${project.features.map(f => `<li>${f}</li>`).join('')}
+                    ${project.features.map(f => `<li>${f}</li>`).join('')}
                     </ul>
-                    <a href="https://github.com/SThirumalaMurthyBabu" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-github"></i> View on GitHub
+
+                    <a href="${project.github}" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-github"></i> View on GitHub
                     </a>
                 `;
                 modal.classList.add('active');
