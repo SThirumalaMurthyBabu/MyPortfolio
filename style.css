@@ -832,6 +832,13 @@ section {
     transition: var(--transition);
     backdrop-filter: blur(10px);
 }
+.tech-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+    object-fit: contain;
+}
 
 .tech-tag:hover {
     border-color: var(--primary);

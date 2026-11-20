@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const typingText = document.getElementById('typing-text');
     const phrases = [
         'Electrical Engineer',
-        'Aspiring Robotics Engineer',
+        'Robotics Software Engineer',
         'ROS 2 Developer',
     ];
     let phraseIndex = 0;
