@@ -43,16 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {    // ===== EXPERIENCE DUR
         let durationText = '';
 
         if (years > 0) {
-            durationText += `${years} ${years === 1 ? 'year' : 'years'}`;
+            durationText += `${years} ${years === 1 ? 'Year' : 'Years'}`;
         }
 
         if (months > 0) {
             if (durationText !== '') durationText += ' ';
-            durationText += `${months} ${months === 1 ? 'month' : 'months'}`;
+            durationText += `${months} ${months === 1 ? 'Month' : 'Months'}`;
         }
 
         if (durationText === '') {
-            durationText = 'Less than 1 month';
+            durationText = 'Less than 1 Month';
         }
 
         // Display duration without disturbing the calendar icon
@@ -399,13 +399,13 @@ function animateCounter(element, target) {
         let result = '';
 
         if (years > 0) {
-            result += `${years} yr`;
+            result += `${years} Yr`;
         }
 
         if (remainingMonths > 0) {
             result += result
-                ? ` ${remainingMonths} mo`
-                : `${remainingMonths} mo`;
+                ? ` ${remainingMonths} Mon`
+                : `${remainingMonths} Mon`;
         }
 
         return result || '0 mo';
