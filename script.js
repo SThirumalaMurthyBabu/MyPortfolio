@@ -307,34 +307,139 @@ document.addEventListener('DOMContentLoaded', () => {    // ===== EXPERIENCE DUR
         revealObserver.observe(el);
     });
 
-    // ===== STATS COUNTER =====
-    const statNumbers = document.querySelectorAll('.stat-number');
+    // ===== PROFESSIONAL EXPERIENCE CALCULATOR =====
 
-    const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const target = parseInt(entry.target.getAttribute('data-target'));
-                animateCounter(entry.target, target);
-                statsObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
+const professionalEntries = document.querySelectorAll(
+    '.timeline-date[data-professional="true"]'
+);
 
-    statNumbers.forEach(stat => statsObserver.observe(stat));
+const professionalMonths = new Set();
 
-    function animateCounter(element, target) {
-        let current = 0;
-        const increment = target / 50;
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                element.textContent = target + '+';
-                clearInterval(timer);
-            } else {
-                element.textContent = Math.floor(current);
-            }
-        }, 30);
+professionalEntries.forEach(entry => {
+
+    const [startYear, startMonth] =
+        entry.dataset.startDate.split('-').map(Number);
+
+    let endYear, endMonth;
+
+    if (entry.dataset.endDate === 'present') {
+        const today = new Date();
+
+        endYear = today.getFullYear();
+        endMonth = today.getMonth() + 1;
+
+    } else {
+        [endYear, endMonth] =
+            entry.dataset.endDate.split('-').map(Number);
     }
+
+    // Count each calendar month only once
+    let year = startYear;
+    let month = startMonth;
+
+    while (
+        year < endYear ||
+        (year === endYear && month <= endMonth)
+    ) {
+        professionalMonths.add(`${year}-${month}`);
+
+        month++;
+
+        if (month > 12) {
+            month = 1;
+            year++;
+        }
+    }
+
+});
+
+// Set the calculated duration as the counter target
+const professionalCounter = document.querySelector(
+    '.professional-experience-number'
+);
+
+if (professionalCounter) {
+    professionalCounter.dataset.target = professionalMonths.size;
+}
+
+// ===== STATS COUNTER =====
+
+const statNumbers = document.querySelectorAll('.stat-number');
+
+const statsObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            const target = parseInt(
+                entry.target.getAttribute('data-target')
+            );
+
+            // Restart animation whenever the counter enters the screen
+            animateCounter(entry.target, target);
+
+            // Do not unobserve here
+        }
+
+    });
+
+}, { threshold: 0.5 });
+
+statNumbers.forEach(stat => statsObserver.observe(stat));
+function animateCounter(element, target) {
+
+    const duration = 1500;
+    const startTime = performance.now();
+
+    function formatDuration(months) {
+        const years = Math.floor(months / 12);
+        const remainingMonths = months % 12;
+
+        let result = '';
+
+        if (years > 0) {
+            result += `${years} yr`;
+        }
+
+        if (remainingMonths > 0) {
+            result += result
+                ? ` ${remainingMonths} mo`
+                : `${remainingMonths} mo`;
+        }
+
+        return result || '0 mo';
+    }
+
+    function updateCounter(currentTime) {
+
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Smooth counting animation
+        const easedProgress = 1 - Math.pow(1 - progress, 3);
+
+        const currentValue = Math.floor(target * easedProgress);
+
+        if (element.dataset.format === 'duration') {
+            element.textContent = formatDuration(currentValue);
+        } else {
+            element.textContent = currentValue;
+        }
+
+        if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+        } else {
+            // Display final value
+            element.textContent =
+                element.dataset.format === 'duration'
+                    ? formatDuration(target)
+                    : target + '+';
+        }
+    }
+
+    requestAnimationFrame(updateCounter);
+}
 
     // ===== SKILL BARS ANIMATION =====
     const skillBars = document.querySelectorAll('.skill-progress');
