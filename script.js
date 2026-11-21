@@ -1,7 +1,66 @@
 // Portfolio JavaScript - STMB
 // Features: Loader, Cursor, Theme, Typing, Animations, Particles, Modal, Filter, Form
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {    // ===== EXPERIENCE DURATION CALCULATOR =====
+
+    const experienceDates = document.querySelectorAll(
+        '.timeline-date[data-start-date][data-end-date]'
+    );
+
+    experienceDates.forEach(dateElement => {
+
+        const startDate = dateElement.dataset.startDate;
+        const endDate = dateElement.dataset.endDate;
+
+        const [startYear, startMonth] = startDate.split('-').map(Number);
+
+        let endYear;
+        let endMonth;
+
+        // Check whether the experience is ongoing
+        if (endDate.toLowerCase() === 'present') {
+
+            const today = new Date();
+
+            endYear = today.getFullYear();
+            endMonth = today.getMonth() + 1;
+
+        } else {
+
+            [endYear, endMonth] = endDate.split('-').map(Number);
+
+        }
+
+        // Calculate total duration in months
+        const totalMonths =
+            (endYear - startYear) * 12 +
+            (endMonth - startMonth) + 1;
+
+        const years = Math.floor(totalMonths / 12);
+        const months = totalMonths % 12;
+
+        // Build duration text
+        let durationText = '';
+
+        if (years > 0) {
+            durationText += `${years} ${years === 1 ? 'year' : 'years'}`;
+        }
+
+        if (months > 0) {
+            if (durationText !== '') durationText += ' ';
+            durationText += `${months} ${months === 1 ? 'month' : 'months'}`;
+        }
+
+        if (durationText === '') {
+            durationText = 'Less than 1 month';
+        }
+
+        // Display duration without disturbing the calendar icon
+        dateElement.append(
+            document.createTextNode(` (${durationText})`)
+        );
+
+    });
     // ===== LOADER =====
     const loader = document.getElementById('loader');
     setTimeout(() => {
