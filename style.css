@@ -1773,3 +1773,8 @@ section {
         grid-template-columns: repeat(13, 1fr);
     }
 }
+/* Keep Professional Experience duration in one line */
+.professional-experience-number {
+    white-space: nowrap;
+    font-size: 2.2rem;
+}
